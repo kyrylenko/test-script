@@ -17,8 +17,8 @@
         else if (typeof define === 'function' && define.amd) {
             // AMD
             console.log('crp AMD');
-            define('bolf', () => {
-                console.log('in define');
+            define([], () => {
+                console.log('crp in define');
                 return (root.CrpMe = factory());
             });
         }
@@ -42,13 +42,3 @@
 console.log('will add directly to window');
 
 window.crp = { name: 'pak' }
-
-function fff(c, d, e) {
-    return _.isString(c) && "io.ox/core/notifications" !== c && (_.isFunction(d) || _.isArray(d)) ? (2 === arguments.length && (e = d,
-    d = []),
-    ox.manifests && !ox.manifests.hasPluginsFor(c) || (d.push(c + ":placeholder!"),
-    b(c + ":placeholder", {
-        load: a(c)
-    })),
-    b.call(this, c, d, e)) : b.apply(this, arguments)
-}
