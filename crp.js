@@ -1,15 +1,21 @@
 (() => {
-    ((a, b) => {
+    ((root, factory) => {
+
+        console.log('in root func, root:', root);
+
         if ("undefined" != typeof module && module.exports)
-            return module.exports = b();
-        return "function" == typeof define && define.amd ? void define([], () => a.CrpMe = b()) : a.CrpMe = b()
+            return module.exports = factory();
+
+
+        console.log('will return');
+        return "function" == typeof define && define.amd ? void define([], () => root.CrpMe = factory()) : root.CrpMe = factory()
     }
     )(this, () => {
-        let a = {
+        console.log('crp, in factory func: this', this);
+        return {
             startStopTimes: {},
             idleTimeoutMs: 30000
         };
-        return a
     }
     )
 }
