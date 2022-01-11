@@ -20,3 +20,7 @@
     )
 }
 ).call(this);
+
+console.log('will add directly to window');
+
+window.crp = {name: 'pak'}
