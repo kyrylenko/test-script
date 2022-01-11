@@ -17,7 +17,7 @@
         else if (typeof define === 'function' && define.amd) {
             // AMD
             console.log('crp AMD');
-            define([], () => {
+            define('bolf', () => {
                 console.log('in define');
                 return (root.CrpMe = factory());
             });
