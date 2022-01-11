@@ -7,13 +7,15 @@
             // CommonJS
             console.log('crp CommonJS');
             return module.exports = factory();
-        } else if (typeof define === 'function' && define.amd) {
+        } 
+        /* else if (typeof define === 'function' && define.amd) {
             // AMD
             console.log('crp AMD');
             define([], () => {
                 return (root.CrpMe = factory());
             });
-        } else {
+        }  */
+        else {
             console.log('crp Global Variables');
             // Global Variables
             return root.CrpMe = factory();
